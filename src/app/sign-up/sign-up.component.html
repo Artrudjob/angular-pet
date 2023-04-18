@@ -1,0 +1,40 @@
+<section [ngClass]="['signUp']">
+    <div [ngClass]="['signUp__containerForm']">
+        <h1 [ngClass]="['signUp__title']">Create your account</h1>
+        <form [ngClass]="['signUp__form']" [formGroup]="signUpForm">
+            <mat-form-field appearance='fill'>
+                <mat-label>Full name</mat-label>
+                <input matInput placeholder="Ex. Harrier Du Bois" type="text" formControlName="fullName" required>
+            </mat-form-field>
+            <mat-form-field appearance='fill'>
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Ex. pat@example.com" type="email" formControlName="email" required>
+            </mat-form-field>
+            <mat-form-field appearance='fill'>
+                <mat-label>New password</mat-label>
+                <input matInput placeholder="Create password" [type]="hide ? 'password' : 'text'" formControlName="password" minlength="8" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{ hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <mat-form-field [ngClass]="['mat-form-field-infix']" appearance='fill'>
+                <mat-label>Confirm password</mat-label>
+                <input matInput placeholder="Confirm password" [type]="hide ? 'password' : 'text'" formControlName="confirmPassword" minlength="8" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Your role</mat-label>
+                <mat-select [(value)]="selectedRole" formControlName="role">
+                    <mat-option *ngFor="let role of roles" [value]="role.valueRole">
+                        {{ role.valueRole }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit" [ngClass]="['signUp__button']" (click)="createAccount()" [disabled]="!signUpForm.valid">SIGN UP</button>
+            <div [ngClass]="['signUp__containerText']">
+                <p [ngClass]="['signUp__text']">Already have an account?</p>
+                <a mat-button>Sign in</a>
+            </div>
+        </form>
+    </div>
+</section>
+
