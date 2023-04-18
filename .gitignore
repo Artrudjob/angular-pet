@@ -8,6 +8,7 @@
 
 # production
 /build
+.angular/
 
 # misc
 .DS_Store
