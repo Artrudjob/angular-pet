@@ -6,11 +6,12 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './auth.guard';
 import { ListOrganizationsComponent } from './list-organizations/list-organizations.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { 
     path: '',
-    component: AppComponent,
+    component: HomeComponent,
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     children: [

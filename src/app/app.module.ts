@@ -17,6 +17,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ListOrganizationsComponent } from './list-organizations/list-organizations.component';
 import { AuthGuard } from './auth.guard';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AuthGuard } from './auth.guard';
     SignInComponent,
     NotFoundComponent,
     ListOrganizationsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
