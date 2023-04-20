@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +8,8 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 export class HomeComponent {
   location: string
 
-  constructor(private cd: ChangeDetectorRef) {}
-
   ngOnInit() {
     this.location = this.getLocationPathName();
-    this.cd.detectChanges();
   }
 
   getLocationPathName() {
