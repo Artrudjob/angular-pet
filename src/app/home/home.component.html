@@ -1,0 +1,21 @@
+<div [ngClass]="['home']">
+    <header>
+        <mat-toolbar color="primary" [ngClass]="['home__header']">
+            <div [ngClass]="['home__container']">
+                <button mat-icon-button>
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <h1>PROJECT ANGULAR-PET</h1>
+            </div>
+            <p>{{location | titlecase}} page</p>
+        </mat-toolbar>
+    </header>
+    <main [ngClass]="['home__main']">
+        <router-outlet></router-outlet>
+    </main>
+    <footer>
+        <mat-toolbar [ngClass]="['home__footer']">
+            <p>Artyom</p>
+        </mat-toolbar>
+    </footer>
+</div>
