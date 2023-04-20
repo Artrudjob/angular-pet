@@ -15,6 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ListOrganizationsComponent } from './list-organizations/list-organizations.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     SignUpComponent,
     SignInComponent,
     NotFoundComponent,
+    ListOrganizationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatButtonModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
