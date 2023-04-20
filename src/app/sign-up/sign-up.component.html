@@ -32,7 +32,7 @@
             <button mat-raised-button color="primary" type="submit" [ngClass]="['signUp__button']" (click)="createAccount()" [disabled]="!signUpForm.valid">SIGN UP</button>
             <div [ngClass]="['signUp__containerText']">
                 <p [ngClass]="['signUp__text']">Already have an account?</p>
-                <a mat-button>Sign in</a>
+                <a mat-button routerLink="/signin">Sign in</a>
             </div>
         </form>
     </div>
