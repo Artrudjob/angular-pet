@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent {
   location: string
+  menuIsOpen: boolean = false
 
-  ngOnInit() {
-    this.location = this.getLocationPathName();
+  constructor(private route: Router) {
+    this.route.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.location = this.getLocationPathName();
+      }
+    })
   }
 
-  getLocationPathName() {
+  getLocationPathName(): string {
     if (window.location.pathname === '/') {
       return 'Home';
     } else {
